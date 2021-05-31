@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <button onclick="goTo('cases')">Cases</button>
+    <button onclick="goTo('about')">About</button>
+    <div id="app">
+       <span>Nenhum caminho escolhido ainda!</span>
+    </div>
+</body>
+
+
+<script>
+
+    function goTo(path) {
+
+        history.pushState(null, null, `${path}`);
+        var app = document.getElementById('app');
+
+        switch (path) {
+            case "about":
+                app.textContent = about()
+                break;
+            case "cases":
+                app.textContent = cases()  
+                break; 
+            default:
+                break;
+        }
+
+    }
+
+    const cases = () => {
+        return "Hello, cases!"
+    }
+
+    const about = () => {
+        return "Hello, About"
+    }
+
+    function init(){
+        var app = document.getElementById('app');
+        app.textContent = "Nenhum caminho escolhido ainda!"
+    }
+
+    window.onload = init()
+
+</script>
+
+<style>
+    body{
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        height: 100vh;
+        width: 100vw;
+        /* background-color: salmon; */
+    }
+    button{
+        background-color: royalblue;
+        height: 70px;
+        padding: 10px;
+        font-family: 'Poppins';
+        color: white;
+        border: none;
+        border-radius: 4px;
+        margin: 20px;
+        min-width: 150px;
+    }
+
+</style>
+
+</html>
