@@ -54,6 +54,9 @@
     }
 
     function init() {
+        if(!window.locatoin.href === "https://main.d39vheemwg3doc.amplifyapp.com"){
+            history.pushState(null, null, ""); 
+        }
         var app = document.getElementById('app');
         app.textContent = "Nenhum caminho escolhido ainda!"
         console.log('iniciei')
