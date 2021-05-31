@@ -9,10 +9,11 @@
 </head>
 
 <body>
+    <button onclick="goTo('home')">Home</button>
     <button onclick="goTo('cases')">Cases</button>
     <button onclick="goTo('about')">About</button>
     <div id="app">
-       <span>Nenhum caminho escolhido ainda!</span>
+        <span>Nenhum caminho escolhido ainda!</span>
     </div>
 </body>
 
@@ -29,8 +30,11 @@
                 app.textContent = about()
                 break;
             case "cases":
-                app.textContent = cases()  
-                break; 
+                app.textContent = cases()
+                break;
+            case "home":
+                app.textContent = home()
+                break;
             default:
                 break;
         }
@@ -45,9 +49,14 @@
         return "Hello, About"
     }
 
-    function init(){
+    const home = () => {
+        return "Hello, Home!"
+    }
+
+    function init() {
         var app = document.getElementById('app');
         app.textContent = "Nenhum caminho escolhido ainda!"
+        console.log('iniciei')
     }
 
     window.onload = init()
@@ -55,7 +64,7 @@
 </script>
 
 <style>
-    body{
+    body {
         display: flex;
         align-items: center;
         justify-content: center;
@@ -63,7 +72,8 @@
         width: 100vw;
         /* background-color: salmon; */
     }
-    button{
+
+    button {
         background-color: royalblue;
         height: 70px;
         padding: 10px;
@@ -74,7 +84,6 @@
         margin: 20px;
         min-width: 150px;
     }
-
 </style>
 
 </html>
